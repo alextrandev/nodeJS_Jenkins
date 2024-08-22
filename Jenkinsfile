@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying to AWS ( Amazon Web Services)....'
+                echo 'Deploying to AWS ( )....'
             }
         }
     }
