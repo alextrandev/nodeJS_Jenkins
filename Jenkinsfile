@@ -14,10 +14,10 @@ pipeline {
                 sh 'npm test'
             }
         }
-        // stage('Deploy') {
-        //     steps {
-        //         sh 'npm run build'
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                sh 'npm run build'
+            }
+        }
     }
 }
