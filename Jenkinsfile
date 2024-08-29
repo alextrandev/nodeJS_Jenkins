@@ -9,10 +9,10 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Scan'){
+        stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv(installationName: 'jenkins_sq') {
-                    sh 'mvn clean package sonar:sonar'
+                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.11.0.3922:sonar'
                 }
             }
         }
