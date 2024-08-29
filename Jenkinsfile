@@ -9,6 +9,13 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Scan'){
+            steps {
+                withSonarQubeEnv(installationName: 'jenkins_sq') {
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
         stage('Test') {
             steps {
                 sh 'npm test'
