@@ -1,20 +1,26 @@
 pipeline {
     agent any
 
+    tools {nodejs "node"}
+
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh 'npm test'
             }
         }
         stage('Deploy') {
             steps {
+ naveed
                 echo 'Deploying to AWS ( )....'
+
+                sh 'npm run build'
+ main
             }
         }
     }
